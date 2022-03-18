@@ -3,8 +3,8 @@ git clone https://github.com/coredns/coredns.git coredns-build
 cp plugin.cfg coredns-build/
 (cd coredns-build; make)
 cp coredns-build/coredns .
-mkdir linux-arm64
-cp coredns linux-arm64/
-zip -r linux-arm64.zip linux-arm64
+mkdir linux-amd64
+cp coredns linux-amd64/
+zip -r linux-amd64.zip linux-amd64
 rm -fr coredns-build
 rm coredns
