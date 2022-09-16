@@ -8,9 +8,9 @@ WORKDIR /opt/coredns-build
 
 RUN git checkout v1.9.1
 
-COPY plugin.cfg /opt/coredns-build/
+COPY plugin.cfg /opt/plugin.cfg
 
-RUN make
+RUN cp /opt/plugin.cfg /opt/coredns-build/plugin.cfg && make
 
 FROM scratch
 
