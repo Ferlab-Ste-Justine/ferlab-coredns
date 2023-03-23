@@ -1,9 +1,6 @@
 name: Publish Image Using Semver Tag
 
-on:
-  push:
-    tags:
-      - v*
+on: [workflow_dispatch]
 
 jobs:
   build:
