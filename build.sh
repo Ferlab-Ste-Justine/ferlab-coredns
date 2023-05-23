@@ -1,5 +1,5 @@
 git clone https://github.com/coredns/coredns.git coredns-build
-(cd coredns-build; git checkout v1.9.1)
+(cd coredns-build; git checkout v1.10.1)
 cp plugin.cfg coredns-build/
 (cd coredns-build; make)
 cp coredns-build/coredns .

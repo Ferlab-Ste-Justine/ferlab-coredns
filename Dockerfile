@@ -6,7 +6,7 @@ RUN git clone https://github.com/coredns/coredns.git coredns-build
 
 WORKDIR /opt/coredns-build
 
-RUN git checkout v1.9.1
+RUN git checkout v1.10.1
 
 COPY plugin.cfg /opt/plugin.cfg
 
