@@ -1,0 +1,16 @@
+.:10053 {
+    bind 0.0.0.0
+    auto {
+        directory ./zonefiles (.*) {1}
+        reload 5s
+    }
+    alternate original SERVFAIL . 8.8.8.8:53
+    loadbalance round_robin
+    reload 5s
+    loop
+    nsid ferlob
+    prometheus 0.0.0.0:9053
+    health 0.0.0.0:8053
+    errors
+    log
+}
