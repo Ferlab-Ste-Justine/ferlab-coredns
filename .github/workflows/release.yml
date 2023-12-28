@@ -20,6 +20,11 @@ jobs:
         run: ./build.sh
         env:
           VERSION: ${{ steps.get_version.outputs.VERSION }}
+      - name: Build Linux Arm64 Binary
+        run: ./build.sh
+        env:
+          VERSION: ${{ steps.get_version.outputs.VERSION }}
+          ARCH: arm64
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -38,4 +43,13 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./linux-amd64.zip
           asset_name: linux-amd64.zip
+          asset_content_type: application/zip
+      - name: Upload Linux Arm64 Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./linux-arm64.zip
+          asset_name: linux-arm64.zip
           asset_content_type: application/zip
