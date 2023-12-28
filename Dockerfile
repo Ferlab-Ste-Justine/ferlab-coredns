@@ -1,4 +1,7 @@
-FROM golang:1.18 as builder
+FROM golang:1.20 as builder
+
+ARG GOARCH=amd64
+ENV GOARCH=$GOARCH
 
 WORKDIR /opt
 
@@ -6,7 +9,7 @@ RUN git clone https://github.com/coredns/coredns.git coredns-build
 
 WORKDIR /opt/coredns-build
 
-RUN git checkout v1.10.1
+RUN git checkout v1.11.1
 
 COPY plugin.cfg /opt/plugin.cfg
 
