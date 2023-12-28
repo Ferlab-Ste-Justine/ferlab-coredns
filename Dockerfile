@@ -1,7 +1,7 @@
 FROM golang:1.20 as builder
 
-ARG GOARCH=amd64
-ENV GOARCH=$GOARCH
+ARG ARCH=amd64
+ENV ARCH=$ARCH
 
 WORKDIR /opt
 
